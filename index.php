@@ -1,9 +1,9 @@
 <?php
 echo "hello";
-$servername = "eager_austin";
+$servername = "mysql-application";
 $username = "root";
 $password = "root";
-$port=3308;
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);

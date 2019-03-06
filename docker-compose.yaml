@@ -25,6 +25,15 @@ services:
         - "php-application:/var/www/html/sample"
 
     ports:
-      - 9000:80
+      - 8000:80
+    networks:
+      - php-application
+
+  mysql-application:
+    container_name: mysql-application
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    command: --default-authentication-plugin=mysql_native_password
     networks:
       - php-application
