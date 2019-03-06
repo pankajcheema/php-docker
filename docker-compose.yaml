@@ -20,12 +20,11 @@ services:
     stdin_open: true
 
     working_dir: /var/www/html/sample/
-    command: /bin/bash
     volumes:
         
         - "php-application:/var/www/html/sample"
 
     ports:
-      - 8000:80
+      - 9000:80
     networks:
       - php-application
