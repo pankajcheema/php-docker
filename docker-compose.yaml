@@ -1,0 +1,31 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+networks:
+  php-application:
+volumes:
+  php-application:
+
+  
+services:
+  php-application:
+    container_name: php-application
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+
+    working_dir: /var/www/html/sample/
+    command: /bin/bash
+    volumes:
+        
+        - "php-application:/var/www/html/sample"
+
+    ports:
+      - 8000:80
+    networks:
+      - php-application
